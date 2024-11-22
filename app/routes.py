@@ -84,6 +84,10 @@ def result():
     color = request.args.get('color')
     estimated_weight = request.args.get('estimated_weight')
 
+    # Định dạng chỉ 2 chữ số thập phân
+    if estimated_weight:
+        estimated_weight = round(float(estimated_weight), 2)
+
     return render_template(
         'result.html',
         filename=filename,
