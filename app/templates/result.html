@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Hình ảnh sản phẩm -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ image_url }}" alt="Hình ảnh sản phẩm" class="card-img-top">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="{{ image_url or url_for('static', filename='img/default.jpg') }}" alt="Hình nhỏ 1" class="img-thumbnail">
+                        </div>
+                        <div class="col-4">
+                            <img src="{{ image_url or url_for('static', filename='img/default.jpg') }}" alt="Hình nhỏ 2" class="img-thumbnail">
+                        </div>
+                        <div class="col-4">
+                            <img src="{{ image_url or url_for('static', filename='img/default.jpg') }}" alt="Hình nhỏ 3" class="img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin sản phẩm -->
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-primary mb-4">{{ name_product }}</h2>
+                    <p class="mb-2"><strong class="text-secondary">Mã sản phẩm:</strong> {{ filename }}</p>
+                    <p class="mb-2"><strong class="text-secondary">Màu sắc:</strong> <span class="badge bg-success text-white">{{ color }}</span></p>
+                    <p class="mb-2"><strong class="text-secondary">Giá:</strong> <span class="text-danger">{{ price_product | floatformat(0) }} VNĐ</span></p>
+                    <hr>
+                    <h4 class="text-info">Ước tính trọng lượng sản phẩm:</h4>
+                    <h3 class="text-success"><strong>{{ estimated_weight }} kg</strong></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút quay lại -->
+    <div class="text-center mt-5">
+        <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">Thử lại</a>
+    </div>
+</div>
+{% endblock %}

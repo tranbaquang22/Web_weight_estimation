@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Upload Sản Phẩm</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="image_file" class="form-label">Chọn hình ảnh sản phẩm</label>
+        <input type="file" name="image_file" id="image_file" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="name_product" class="form-label">Tên sản phẩm</label>
+        <input type="text" name="name_product" id="name_product" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="name_level_1" class="form-label">Danh mục cấp 1</label>
+        <input type="text" name="name_level_1" id="name_level_1" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="name_level_2" class="form-label">Danh mục cấp 2</label>
+        <input type="text" name="name_level_2" id="name_level_2" class="form-control" placeholder="Không bắt buộc">
+    </div>
+    <div class="mb-3">
+        <label for="name_level_3" class="form-label">Danh mục cấp 3</label>
+        <input type="text" name="name_level_3" id="name_level_3" class="form-control" placeholder="Không bắt buộc">
+    </div>
+    <div class="mb-3">
+        <label for="color" class="form-label">Màu sắc</label>
+        <input type="text" name="color" id="color" class="form-control" placeholder="Ví dụ: Xanh, Đỏ">
+    </div>
+    <div class="mb-3">
+        <label for="price_product" class="form-label">Giá sản phẩm (VNĐ)</label>
+        <input type="number" name="price_product" id="price_product" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Upload</button>
+</form>
+{% endblock %}
